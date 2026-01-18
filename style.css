@@ -5,12 +5,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
+  background: radial-gradient(circle, #111, #000);
   font-family: 'Playfair Display', serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 }
 
 .overlay {
@@ -29,48 +28,49 @@ body {
 
 .scroll {
   width: 100%;
-  max-width: 360px;
-  background: #f5ecd9;
-  border-radius: 12px;
-  animation: unroll 2.5s ease forwards;
-  box-shadow: 0 0 40px rgba(255,255,255,0.15);
+  max-width: 380px;
+  background: url("paper.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  padding: 28px 20px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 0 30px rgba(0,0,0,0.2);
 }
 
-.scroll-top,
-.scroll-bottom {
-  height: 28px;
-  background: #e0d3b8;
-}
-
-.content {
-  padding: 24px 18px;
+.page {
+  display: none;
   text-align: center;
-  color: #4a3b2a;
+  color: #3f2e1e;
+  animation: fade 0.8s ease;
+}
+
+.page.active {
+  display: block;
 }
 
 h1 {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-size: 26px;
 }
 
-.line {
-  opacity: 0;
+p {
+  margin: 6px 0;
   font-size: 16px;
-  margin: 7px 0;
 }
 
 .signature {
-  margin-top: 22px;
+  margin-top: 18px;
   font-style: italic;
-  opacity: 0;
 }
 
-#chooseBtn {
-  margin-top: 22px;
-  padding: 10px 22px;
+button {
+  margin: 14px 6px 0;
+  padding: 9px 20px;
   border: none;
   border-radius: 20px;
-  background: #c59b6d;
+  background: #b48a5a;
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -78,12 +78,11 @@ h1 {
 
 #finalText {
   margin-top: 14px;
-  font-size: 15px;
   opacity: 0;
   transition: opacity 1.5s ease;
 }
 
-@keyframes unroll {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
