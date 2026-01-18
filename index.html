@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Nithya Sri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -13,34 +13,42 @@
 
 <div class="container">
   <div class="scroll">
-    <div class="scroll-top"></div>
 
-    <div class="content">
+    <!-- PAGE 1 -->
+    <div class="page active">
       <h1>Nithya Sri</h1>
+      <p>This is not a contract written by fate.</p>
+      <p>This is a promise written by choice.</p>
+      <p>I never expected my heart</p>
+      <p>to find peace in your name.</p>
+      <button onclick="nextPage()">Next</button>
+    </div>
 
-      <p class="line">This is not a contract written by fate.</p>
-      <p class="line">This is a promise written by choice.</p>
+    <!-- PAGE 2 -->
+    <div class="page">
+      <h1>A Quiet Truth</h1>
+      <p>I promise to stay,</p>
+      <p>not only in happy moments,</p>
+      <p>but in silence and storms.</p>
+      <p>Even if the world changes,</p>
+      <p>my feelings for you will not.</p>
+      <button onclick="prevPage()">Back</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
 
-      <p class="line">I never expected my heart</p>
-      <p class="line">to find peace in your name.</p>
-
-      <p class="line">Nithya Sri,</p>
-      <p class="line">I promise to stay —</p>
-      <p class="line">in silence and in smiles.</p>
-
-      <p class="line">Even if the world changes,</p>
-      <p class="line">my feelings for you will not.</p>
-
-      <p class="line">This promise has no end date,</p>
-      <p class="line">only endless moments with you.</p>
-
+    <!-- PAGE 3 -->
+    <div class="page">
+      <h1>The Choice</h1>
+      <p>This promise has no end date.</p>
+      <p>No conditions.</p>
+      <p>No fear.</p>
+      <p>Only endless moments with you.</p>
       <p class="signature">— Ezhil</p>
-
+      <button onclick="prevPage()">Back</button>
       <button id="chooseBtn">I choose you</button>
       <p id="finalText">Not because of fate… but because of love.</p>
     </div>
 
-    <div class="scroll-bottom"></div>
   </div>
 </div>
 
