@@ -1,15 +1,30 @@
-const lines = document.querySelectorAll(".line, .signature");
-const btn = document.getElementById("chooseBtn");
+let current = 0;
+const pages = document.querySelectorAll(".page");
 const finalText = document.getElementById("finalText");
+const chooseBtn = document.getElementById("chooseBtn");
 
-lines.forEach((line, index) => {
-  setTimeout(() => {
-    line.style.opacity = "1";
-    line.style.transition = "opacity 1.5s";
-  }, index * 900);
-});
+function showPage(index) {
+  pages.forEach(p => p.classList.remove("active"));
+  pages[index].classList.add("active");
+}
 
-btn.addEventListener("click", () => {
+function nextPage() {
+  if (current < pages.length - 1) {
+    current++;
+    showPage(current);
+  }
+}
+
+function prevPage() {
+  if (current > 0) {
+    current--;
+    showPage(current);
+  }
+}
+
+chooseBtn.addEventListener("click", () => {
   finalText.style.opacity = "1";
-  btn.style.display = "none";
+  chooseBtn.style.display = "none";
 });
+
+showPage(current);
